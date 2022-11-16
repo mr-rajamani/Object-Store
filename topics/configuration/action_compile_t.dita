@@ -49,8 +49,5 @@
                     </fig></stepresult>
             </step>
         </steps>
-        <postreq id="postreq_c3c_bbp_nvb">Create more actions for the ToDo applications. For
-            example, GetAll, Delete, MarkAsCompleted, MarkAsPending, GetPending, GetCompleted,
-            GetNotes.</postreq>
     </taskbody>
 </task>

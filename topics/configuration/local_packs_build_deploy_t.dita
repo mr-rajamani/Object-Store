@@ -30,7 +30,7 @@
                     <fig id="fig_a5j_2sr_55b">
                         <title>Build, Deploy, and Install Local Pack</title>
                         <image placement="break" href="../../images/todo_build_deploy_3.png"
-                            scale="80" id="image_h5v_hsr_55b">
+                            scale="70" id="image_h5v_hsr_55b">
                             <alt>Build, Deploy, and Install Local Pack</alt>
                         </image>
                     </fig>
@@ -74,7 +74,7 @@
                             respectively.<fig id="fig_frz_q2c_gvb">
                             <title>Packaged Files</title>
                             <image placement="inline" href="../../images/todo_build_deploy_6.png"
-                                scale="50" id="image_iyx_dfc_gvb">
+                                scale="60" id="image_iyx_dfc_gvb">
                                 <alt>Packaged Files</alt>
                             </image>
                         </fig></p><p>You can use the bundled package content in the UI and start

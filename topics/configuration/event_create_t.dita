@@ -71,7 +71,8 @@
                     </fig></stepresult>
             </step>
         </steps>
-        <postreq id="postreq_abk_hbp_nvb">Now that a Create event has been added, you also create
-            Delete and Modified events.</postreq>
+        <example id="example_lhj_wnl_fvb">In this example, we have created a
+                <parmname>Create</parmname> event. Now, we can create <parmname>Delete</parmname>
+            and <parmname>Modified</parmname> events.</example>
     </taskbody>
 </task>

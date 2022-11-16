@@ -102,13 +102,16 @@
                     </fig></stepresult>
             </step>
         </steps>
-        <example id="example_rxh_zql_fvb">In this example, we have created a
-                <parmname>Create</parmname> action to perform an action on the task. Now, we can
-            create <parmname>GetAll</parmname>, <parmname>Delete</parmname>,
-                <parmname>MarkAsCompleted</parmname>, <parmname>MarkAsPending</parmname>,
-                <parmname>GetPending</parmname>, <parmname>GetCompleted</parmname> and
-                <parmname>GetNotes</parmname> actions to perform various operations on the
-            tasks.</example>
+        <example id="example_rxh_zql_fvb">
+            <p>In this example, we have created a <parmname>Create</parmname> action to perform an
+                action on the task. Now, we can create <parmname>GetAll</parmname>,
+                    <parmname>Delete</parmname>, <parmname>MarkAsCompleted</parmname>,
+                    <parmname>MarkAsPending</parmname>, <parmname>GetPending</parmname>,
+                    <parmname>GetCompleted</parmname> and <parmname>GetNotes</parmname> actions to
+                perform various operations on the tasks.</p>
+            <p>Similarly, we can create <parmname>Create</parmname> and <parmname>Delete</parmname>
+                note actions.</p>
+        </example>
         <postreq id="postreq_mcx_zxq_55b"><xref href="action_compile_t.dita">Compile the Action for
                 the Content Definition</xref>.</postreq>
     </taskbody>
