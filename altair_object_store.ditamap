@@ -22,7 +22,7 @@
     <keydef keys="version">
         <topicmeta>
             <keywords>
-                <keyword>2023.1.0</keyword>
+                <keyword>2023</keyword>
             </keywords>
         </topicmeta>
     </keydef>
@@ -32,6 +32,7 @@
     <mapref href="container_keydef_keywords_global.ditamap" />
     
     <mapref href="subjectschemepbsworks.ditamap" />
+    <topicref href="index.dita"/>
  
     <topicref href="topics/get_started/object_store_overview_r.dita"/>
     

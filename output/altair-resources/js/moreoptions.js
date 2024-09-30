@@ -25,6 +25,7 @@ function setAccessOptions() {
   const marketplaceLink = document.querySelector(".marketplace-link");
   const communityLink = document.querySelector(".community-link");
   const backLink = document.querySelector(".backLink");
+  const downloadOption = document.querySelector(".download-option");
   let offlineLinks = [marketplaceLink, communityLink, downloadPackageLink];
 
   switch (cachedAccessType) {
@@ -55,6 +56,12 @@ function setAccessOptions() {
       downloadPackageLink.href = `http://${cachedMajorVersion}.help.altair.com/${cachedVersion}/offlinehelp/hw${cachedInstallPackage.toLowerCase()}_${cachedVersion}_offline_help.zip`;
       break;
   }
+
+  //Workaround for Firefox. Due to strict origin policy, session storage values can't be shared across directories on local help.
+  if (navigator.userAgent.includes("Firefox") && window.location.protocol.includes("file")) {
+    downloadOption.innerHTML = 'Load this page in Chrome, Edge, or Safari to access a help package download link.'
+  }
+
 
   function generateModalUI() {
     //Setup modal and overlay UI

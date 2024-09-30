@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="index">
+    <title outputclass="index_title">Welcome to Altair One</title>
+    <titlealts>
+        <navtitle>Welcome</navtitle>
+    </titlealts>
+    <conbody>
+        <section id="section_t4n_xh5_cxb">
+            <draft-comment author="ajuntti">Used as the new skin's landing page. Please do not
+                delete.</draft-comment>
+            <p><object outputclass="iframe" product="cfd">
+                    <param name="src" value="https://fast.wistia.net/embed/iframe/rokpa7smhg"/>
+                    <param name="allowFullScreen" value="true"/>
+                </object>
+                <!-- <object outputclass="iframe" product="os">
+                    <param name="src" value="https://fast.wistia.net/embed/iframe/eod0xicitw"/>
+                    <param name="allowFullScreen" value="true"/>
+                </object> --></p>
+            <p outputclass="more_resources_title">More Resources</p>
+            <p>
+                <div outputclass="more_resources_container">
+                    <div outputclass="more_resources_button"><xref href="https://altairone.com/home"
+                            scope="external" format="html">Altair One</xref></div>
+                    <div outputclass="more_resources_button"><xref
+                            href="https://community.altair.com/community" scope="external"
+                            format="html">Altair Community</xref></div>
+                    <div outputclass="more_resources_button"><xref scope="external" format="html"
+                            href="https://learn.altair.com/">Altair Learning</xref></div>
+                    <div outputclass="more_resources_button"><xref scope="external" format="html"
+                            href="https://altairone.com/Marketplace">Altair Marketplace</xref></div>
+                    <div outputclass="more_resources_button"><xref scope="external" format="html"
+                            href="https://www.youtube.com/c/altairhowto">Altair Video
+                        Channel</xref></div>
+                </div>
+            </p>
+        </section>
+ 
+        
+    </conbody>
+</concept>

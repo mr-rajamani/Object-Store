@@ -3,11 +3,11 @@
   align-items: center;
   flex-direction: column;
   padding-top: 10vh;
+  height: 80vh;
 }
 
 .more-options-header {
   display: block;
-  font-size: 1.1rem;
   font-family: "NotoSans-Regular", "Arial", sans-serif;
   padding: 2%;
   padding-bottom: 0px;
@@ -16,7 +16,6 @@
 
 .more-options-subheader {
   display: block;
-  font-size: 0.8rem;
   font-style: italic;
   font-family: "NotoSans-Regular", "Arial", sans-serif;
   margin-top: 5px;
@@ -42,32 +41,11 @@ body {
 li {
   padding: 2%;
   font-family: "NotoSans-Regular", "Arial", sans-serif;
-  font-size: 0.8rem;
 }
 
 a:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-
-.helpHome a:visited,
-.helpHome a:hover {
-  color: #ffffff !important;
-  text-decoration: none;
-}
-
-.helpHome {
-  border: none;
-  background-color: #00abec;
-  height: 2rem;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 32px;
-  padding-right: 32px;
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 1rem;
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -78,14 +56,38 @@ a:hover {
   }
 }
 
-.helpHome p a {
-  color: #ffffff;
+.home-button {
+  border: none;
+  background-color: #005776;
+  height: 4rem;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 32px;
+  padding-right: 32px;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
   font-size: 0.75rem;
+  min-height: 35px;
 }
 
-.helpHome p::before {
-  color: #ffffff;
+.home-button a:visited,
+.home-button a:hover {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.home-button a::before {
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0 5px 0 0;
   vertical-align: text-top;
+}
+
+.home-button a {
+  color: #ffffff;
+  font-size: 1.2rem;
 }
 
 .view-online-link {
@@ -111,4 +113,8 @@ a:hover {
   min-height: 120px;
   min-width: 210px;
   max-width: 210px;
+}
+
+body.dark-theme .offline-options {
+  color: #f4f4f4
 }

@@ -5,6 +5,18 @@ const setupVersionNavigation = async () => {
     return;
   }
 
+    //Suppress the feature for SimSolid Cloud and SmartWorks
+    const currentPage = window.location.href;
+    if (currentPage.includes("/ss_cloud/") || 
+        currentPage.includes("/ss_cloudone/") ||
+        currentPage.includes("/smartworks/") ||
+        currentPage.includes("/SmartWorks_IoT/") ||
+        currentPage.includes("altair-iot")) {
+        return;
+    }
+
+  
+
   (function () {
     window.onpageshow = function(event) {
         if (event.persisted) {
@@ -39,12 +51,54 @@ const setupVersionNavigation = async () => {
 
     const versionsToCheck = [];
     const currentYear = new Date().getFullYear() + 1;
-    for (let i = 2021; i <= currentYear; i++) {
-      versionsToCheck.push(i);
-      versionsToCheck.push(i + 0.1);
-      versionsToCheck.push(i + 0.2);
-    }
+    var path_lower = window.location.pathname.toLowerCase();
+      if (path_lower.indexOf("/feko") >= 0 || 
+          path_lower.indexOf("/newfasant") >= 0 || 
+          path_lower.indexOf("/winprop") >= 0) {
+          for (let i = 2022; i <= currentYear; i++) {
+              versionsToCheck.push(String(i));
+              versionsToCheck.push(String(i + 0.1));
+              versionsToCheck.push(String(i + 0.1) + ".2");
+              versionsToCheck.push(String(i + 0.1) + ".1");
+              versionsToCheck.push(String(i + 0.1) + ".0");
+              versionsToCheck.push(String(i + 0.2));
+              versionsToCheck.push(String(i + 0.2) + ".2");
+              versionsToCheck.push(String(i + 0.2) + ".1");
+              versionsToCheck.push(String(i + 0.2) + ".0");
+              versionsToCheck.push(String(i + 0.3));
+              versionsToCheck.push(String(i + 0.3) + ".2");
+              versionsToCheck.push(String(i + 0.3) + ".1");
+              versionsToCheck.push(String(i + 0.3) + ".0");
 
+          }
+      }
+      else if (path_lower.indexOf("/accelerator") >= 0 || 
+               path_lower.indexOf("/wrap") >= 0||
+               path_lower.indexOf("/access") >= 0 ||
+               path_lower.indexOf ("/insightpro") >= 0) {
+          for (let i = 2022; i <= currentYear; i++) {
+              versionsToCheck.push(String(i));
+              versionsToCheck.push(String(i + 0.1) + ".2");
+              versionsToCheck.push(String(i + 0.1) + ".1");
+              versionsToCheck.push(String(i + 0.1) + ".0");
+              versionsToCheck.push(String(i + 0.2) + ".2");
+              versionsToCheck.push(String(i + 0.2) + ".1");
+              versionsToCheck.push(String(i + 0.2) + ".0");
+              versionsToCheck.push(String(i + 0.3) + ".2");
+              versionsToCheck.push(String(i + 0.3) + ".1");
+              versionsToCheck.push(String(i + 0.3) + ".0");
+
+          }
+      }
+      else {
+          for (let i = 2022; i <= currentYear; i++) {
+              versionsToCheck.push(String(i));
+              versionsToCheck.push(String(i + 0.1));
+              versionsToCheck.push(String(i + 0.2));
+              versionsToCheck.push(String(i + 0.3));
+
+          }
+      }
     const fetches = [];
     let hostname = window.location.hostname;
     if (!hostname.includes("staging") && !hostname.includes("dev")) {
@@ -55,10 +109,16 @@ const setupVersionNavigation = async () => {
         hostname = `${versionsToCheck[i]
           .toString()
           .slice(0, 4)}.help.altair.com`;
-      }
+        }
+        let version_folder = "";
+        if (window.location.hostname == "help.altair.com") {
+            version_folder = "/" + versionsToCheck[i];
+        }
+        //console.log("currentVersion: " + currentVersion);
+        //console.log("versionsToCheck: " + versionsToCheck[i]);
       fetches.push(
         fetch(
-          `https://${hostname}${window.location.pathname.replace(
+            `https://${hostname}${version_folder}${(window.location.pathname + "?nonverck=1").replace(
             currentVersion,
             versionsToCheck[i]
           )}`
@@ -78,18 +138,15 @@ const setupVersionNavigation = async () => {
     Promise.allSettled(fetches).then(() => {
       // console.log("All statuses resolved");
       // console.log(statuses);
-      statuses.sort((a, b) => b - a);
+      // statuses.sort((a, b) => b - a);
+      statuses.sort().reverse();
       setupVersionOptions();
     });
   }
 
   async function selectActiveNode() {
     //Select the active version node depending on context
-    window.location.pathname.includes("/index.htm") ||
-    window.location.pathname.includes("/search.htm")
-      ? (versionNodeSelector = ".wh_version")
-      : (versionNodeSelector = ".wh_content_area .wh_version");
-    versionNode = document.querySelector(versionNodeSelector);
+    versionNode = document.querySelector(".wh_version");
     currentVersion = versionNode.querySelector("p").textContent;
   }
 
@@ -130,15 +187,25 @@ const setupVersionNavigation = async () => {
   versionSelector.addEventListener("change", () => {
     console.log(versionSelector.value);
     let domain = `https://${window.location.hostname}`;
+    let version_folder = "";
     if (production) {
-      domain = `https://${versionSelector.value.slice(0, 4)}.help.altair.com`;
+        domain = `https://${versionSelector.value.slice(0, 4)}.help.altair.com`;
     }
-    const newPathname = window.location.pathname.replace(
-      currentVersion,
-      versionSelector.value
-    );
+    if (window.location.hostname == "help.altair.com") {
+        version_folder = "/" + versionSelector.value;
+    }
+    var newPathname = (version_folder + window.location.pathname);
+
+    if (window.location.hostname != "help.altair.com") {
+        newPathname = newPathname.replace(
+            currentVersion,
+            versionSelector.value
+        );
+    }
+    
     window.location.href = `${domain}${newPathname}`;
-  });
+});
+
 };
 
 setupVersionNavigation();

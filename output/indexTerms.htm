@@ -1,149 +1,189 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" data-whc_version="25.1" lang="en" dir="ltr">
+    <head><link rel="shortcut icon" href="iconAltair-32.png"/><link rel="icon" href="iconAltair-32.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="wh-path2root" content=""/><title>Index Terms - Getting Started with Altair Object Store</title>
+        
+        
+         
+        
+        
 
-<!DOCTYPE html
-  PUBLIC "" "about:legacy-compat">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:whc="http://www.oxygenxml.com/webhelp/components">
-    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><link rel="shortcut icon" href="iconAltair-32.png"><!----></link><link rel="icon" href="iconAltair-32.png"><!----></link><meta name="wh-path2root" content="" />
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script type="text/javascript">
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-MQVBBP7');
-        </script>
-        <script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="deA2r3tvs" async="true"></script>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Index Terms</title>
-        <script type="text/javascript" src="oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/commons.css?buildId=2023063008"/>
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/indexterms.css?buildId=2023063008"/>
 
-        <!-- Latest compiled and minified Bootstrap CSS -->
-        <link rel="stylesheet" href="oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css" />
-        
-        <!-- Bootstrap Optional theme -->
-        <link rel="stylesheet" href="oxygen-webhelp/lib/bootstrap/css/bootstrap-theme.min.css" />
+    <script src="./oxygen-webhelp/app/options/properties.js?buildId=20240927105356"></script>
+    <script src="./oxygen-webhelp/app/localization/strings.js?buildId=2023063008"></script>
+    <script src="./oxygen-webhelp/app/search/index/keywords.js?buildId=20240927105356"></script>
+    <script src="./oxygen-webhelp/app/commons.js?buildId=2023063008"></script>
+    <script src="./oxygen-webhelp/app/indexterms.js?buildId=2023063008"></script>
 
-        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/app/indexterms-page.css?buildId=2018042310" />
-        
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('.wh_indexterms_link').find('a').text('');
-            });
-        </script>
-        
-        <script data-main="oxygen-webhelp/app/indexterms-page.js" src="oxygen-webhelp/lib/requirejs/require.js"></script>
-        
-        <!-- Skin resources -->
-        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2018042310" />
-        <link rel="stylesheet" type="text/css" href="altair-resources/css/bootstrap-toc.css" /><link rel="stylesheet" type="text/css" href="altair-resources/css/altair.css" /><link rel="icon" sizes="180x180" href="altair-resources/img/altair-icon.png" />
-        <!-- EXM-36950 - Expand the args.hdf parameter here -->
+        <link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/oxygen.css?buildId=2023063008"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2023063008"/>
         
         
-    <title>Getting Started with Altair Object Store</title></head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" type="text/css" href="./altair-resources/css/altair.css?39092024"/><link rel="icon" sizes="180x180" href="./altair-resources/img/altair-icon.png"/><!-- Add three possible locations for MathJax (not a bug, intentional) -->
+<script type="text/javascript" src="./MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="./../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/javascript" src="./../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script> 
+
+
+<!-- Google Tag Manager -->
+<script type="text/javascript"><!--
+
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M2T7LR');
+
+--></script>
+
+<!-- Full Story script - IoT only -->
+<script><!--
+
+if (window.location.href.includes("/SmartWorks_IoT/") || window.location.href.includes("altair-iot")) {
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+    window['_fs_org'] = '12KHQA';
+    window['_fs_namespace'] = 'FS';
+    (function(m,n,e,t,l,o,g,y){
+        if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+        g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+        o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+        y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+        g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+        g.anonymize=function(){g.identify(!!0)};
+        g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+        g.log = function(a,b){g("log",[a,b])};
+        g.consent=function(a){g("consent",!arguments.length||a)};
+        g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+        g.clearUserCookie=function(){};
+        g.setVars=function(n, p){g('setVars',[n,p]);};
+        g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+        if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+        g._v="1.3.0";
+    })(window,document,window['_fs_namespace'],'script','user');
+}
+
+--></script>
+
+<!-- Cookie consent (online only) -->
+<script type="text/javascript"><!--
+
+    if(window.location.protocol !== 'file:'){
+        let userCentricsScript = document.createElement('script');
+        userCentricsScript.id = "usercentrics-cmp"
+        userCentricsScript.src = "https://app.usercentrics.eu/browser-ui/latest/loader.js";
+        userCentricsScript.setAttribute('data-settings-id', "deA2r3tvs");
+        userCentricsScript.async = true;
+        document.getElementsByTagName('head')[0].appendChild(userCentricsScript);
+    }
+
+--></script>
+
+
+
+<script><!--
+
+  function debug(msg, object){
+      console.log(msg, object);
+  }
+  function executeQuery(){
+      $('#searchForm').submit();
+      return true;
+  }
+
+--></script>
+  
+
+
+        
+    </head>
     <body class="wh_terms_page">
-        <!-- Sets the current theme (light/dark) based on local storage. The script is placed here rather than
-            at the end of the body tag with the rest of the js. This prevents page flickering on refresh.-->        
+        <a href="#content" class="sr-only sr-only-focusable">
+            Jump to index list
+        </a>
+        
+        
         <script>
-         if (localStorage.getItem('darkTheme') === 'true'){
-                document.body.classList.toggle("dark-theme");
-            }
-        </script>        
-        <!-- EXM-36950 - Expand the args.hdr parameter here -->
+    if (localStorage.getItem('darkTheme') === 'true'){
+        document.body.classList.toggle("dark-theme");
+    }
+</script>
         
         
-        
-<nav class="navbar navbar-default wh_header">
+        <header class="navbar navbar-default wh_header">
     <div class="container-fluid">
-        <div class="wh_logo_and_publication_title_container">
-            <div class="wh_logo_and_publication_title">
-                
-                    <!--
-                            This component will be generated when the next parameters are specified in the transformation scenario:
-                            'webhelp.logo.image' and 'webhelp.logo.image.target.url' and 'webhelp.prod.version'.
-                            See: http://oxygenxml.com/doc/versions/17.1/ug-editor/#topics/dita_webhelp_output.html.
-                    -->
-                    <a href="index.htm" class=" wh_logo "><img src="logo_PBSWorks_color_hw.svg" alt="Getting Started with Altair Object Store" /></a>
-                    <div class=" wh_publication_title "><a href="index.htm"><span class="title">Getting Started with Altair Object Store</span></a></div>
-                    <div class=" wh_version "><p>2023</p></div>
+        <div class="wh_header_flex_container navbar-nav navbar-expand-md navbar-dark">
+            <div class="wh_logo_and_publication_title_container">
+                <div class="wh_logo_and_publication_title">
                     
+                    <a href="index.htm" class=" wh_logo d-none d-sm-block "><img src="logo_PBSWorks_color_hw.svg" alt="Getting Started with Altair Object Store"/></a>
+                    <div class=" wh_publication_title "><a href="index.htm"><span class="title">Getting Started with Altair Object Store</span></a></div>
+                    <span class="prod_version">
+	<div class=" wh_version "><p>2024.1</p></div>
+</span>
                 </div>
                 
-                <!-- The menu button for mobile devices is copied in the output only when the 'webhelp.show.top.menu' parameter is set to 'yes' -->
-                <button type="button" data-target=".wh_top_menu_and_indexterms_link" id="wh_menu_mobile_button" data-toggle="collapse" class="navbar-toggle collapsed wh_toggle_button">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-        <div class="wh_header_flex_container">
-            <whc:webhelp_breadcrumb></whc:webhelp_breadcrumb>
-            <whc:webhelp_navigation_links></whc:webhelp_navigation_links>
-            <div class=" wh_search_input "><form id="searchForm" method="get" action="search.htm"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" /><button type="submit" class="wh_search_button"><span>Search Help</span></button></div></form></div>
-            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse">
-                
-                <div class=" wh_top_menu "><ul>
-   <li><span data-tocid="untitled3-d46e422" data-state="leaf" class=" topicref " data-id="untitled3"><span class="title"><a href="topics/get_started/object_store_overview_r.htm">About Altair <span class="keyword">Object Store</span></a></span></span></li>
-   <li><span data-tocid="reference_ogh_541_wtb-d46e444" data-state="leaf" class=" topicref " data-id="reference_ogh_541_wtb"><span class="title"><a href="topics/get_started/object_store_features_r.htm"><span class="keyword">Object Store</span> Features
-               </a></span></span></li>
-   <li><span data-tocid="reference_y2h_klg_m5b-d46e467" data-state="leaf" class=" topicref " data-id="reference_y2h_klg_m5b"><span class="title"><a href="topics/get_started/object_store_benefits_r.htm">Benefits of <span class="keyword">Object Store</span></a></span></span></li>
-   <li><span data-tocid="reference_usn_xlg_m5b-d46e487" data-state="leaf" class=" topicref " data-id="reference_usn_xlg_m5b"><span class="title"><a href="topics/get_started/object_store_architecture_r.htm">Altair <span class="keyword">Object Store</span> Platform Architecture
-               </a></span></span></li>
-   <li><span data-tocid="task_ql5_png_m5b-d46e508" data-state="leaf" class=" topicref " data-id="task_ql5_png_m5b"><span class="title"><a href="topics/install/object_store_install_t.htm">Install <span class="keyword">Object Store</span></a></span></span></li>
-   <li><span data-tocid="reference_zqq_pmg_m5b-d46e537" data-state="leaf" class=" topicref " data-id="reference_zqq_pmg_m5b"><span class="title"><a href="topics/get_started/vs_code_integration_r.htm">Integration with VS Code</a></span></span></li>
-   <li><span data-tocid="task_cxr_t4y_lyb-d46e559" data-state="leaf" class=" topicref " data-id="task_cxr_t4y_lyb"><span class="title"><a href="topics/get_started/vs_code_integrate_register_t.htm">Register the Content Pack with VS Code</a></span></span></li>
-   <li><span data-tocid="reference_qhy_qnl_2vb-d46e577" data-state="leaf" class=" topicref " data-id="reference_qhy_qnl_2vb"><span class="title"><a href="topics/configuration/application_create_r.htm">Create an Application using Object Store </a></span></span></li>
-   <li class="has-children"><span data-tocid="task_sr5_v5g_m5b-d46e595" data-state="not-ready" class=" topicref " data-id="task_sr5_v5g_m5b"><span class="title"><a href="topics/configuration/object_store_configuration_t.htm">Create Objects in <span class="keyword">Object Store</span></a></span></span></li>
-   <li class="has-children"><span data-tocid="task_rxh_yxg_3vb-d46e805" data-state="not-ready" class=" topicref " data-id="task_rxh_yxg_3vb"><span class="title"><a href="topics/object_store_apis/apply_access_application_t.htm">Apply Object Store Packs to use the Application</a></span></span></li>
-   <li class="has-children"><span data-tocid="reference_u33_mff_cyb-d46e874" data-state="not-ready" class=" topicref " data-id="reference_u33_mff_cyb"><span class="title"><a href="topics/configuration/application_create_hpc_r.htm">Create an Advanced Application using Object Store</a></span></span></li>
-   <li class="has-children"><span data-tocid="reference_kt4_5bq_nyb-d46e1202" data-state="not-ready" class=" topicref " data-id="reference_kt4_5bq_nyb"><span class="title"><a href="topics/application/general_faq_r.htm">Object Store Examples</a></span></span></li>
-   <li><span data-tocid="reference_z5r_3ml_4yb-d46e1269" data-state="leaf" class=" topicref " data-id="reference_z5r_3ml_4yb"><span class="title"><a href="topics/api_documentation/api_documentation_r.htm">API Documentation</a></span></span></li>
-</ul></div>
-                
-                <div class=" wh_print_link print "><a href="javascript:window.print();" title="Print this page" class="print_button"></a></div>
                 
             </div>
-        </div>
-        <div class="nav_tools">
-            <nav class="wh_tools hidden-print">
-                <div class="wh_right_tools hidden-sm hidden-xs">  
-                    <whc:webhelp_toggle_highlight></whc:webhelp_toggle_highlight>
-                </div>
-            </nav>
+
+            <div class="wh_top_menu_and_indexterms_link collapse navbar-collapse" id="wh_top_menu_and_indexterms_link">
+                
+                
+                
+                
+            </div>
         </div>
     </div>
-</nav>
+</header> 
         
-        <div class="container-fluid">
+        
+         
+        
+        
+        
+        
+        <div class="container-fluid wh_content_area" id="content">
             <div class="row">
                 <div class=" wh_index_terms col-xs-12 col-sm-12 col-md-12 col-lg-12 "></div>
             </div>
         </div>
-        <nav class="navbar navbar-default wh_footer">
-  <div class=" footer-container text-center ">
+        
+        
+        
+        
+        <footer class="navbar navbar-default wh_footer">
+  <div class=" footer-container mx-auto ">
     
         
         <div>
-            <p>© 2022 Altair Engineering, Inc. All Rights Reserved.</p>
-            <p><a href="front_matter/intellectual_property_rights_notice_pbsworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="front_matter/technical_support_pbsworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a>  |  <a onclick="UC_UI.showSecondLayer();">Cookie Consent</a></p>   
-        </div>
-
-
+            <p>© 2024 Altair Engineering, Inc. All Rights Reserved.</p>
+            <p><a href="./front_matter/intellectual_property_rights_notice_pbsworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Intellectual Property Rights Notice</a>  |  <a href="./front_matter/technical_support_pbsworks_r.htm" onclick="window.open(this.href, 'windowOpenTab', 'scrollbars=1,resizable=1,width=740,height=500,left=0,top=0'); return false;">Technical Support</a>  |  <a onclick="UC_UI.showSecondLayer();">Cookie Consent</a></p>   
+		
+		</div>
+		
 		<!-- Generates the dark theme slider -->
 		
 		<label class="darkModeToggle">
 			<span class="onoff"></span>
-				<input type="checkbox" id="toggleState" />
+				<input type="checkbox" id="toggleState"/>
 			<span class="slider round"></span>
-		</label>		
-		
+		</label>
 		
     
   </div>
-</nav>
+</footer>
+        
+        <script src="./oxygen-webhelp/lib/jquery/jquery-3.1.1.min.js" type="text/javascript"></script>
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="oxygen-webhelp/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="altair-resources/js/bootstrap-toc.js"></script><script type="text/javascript" src="altair-resources/js/breadcrumbs.js"></script><script type="text/javascript" src="altair-resources/js/darkTheme.js"></script><script type="text/javascript" src="altair-resources/js/splash.js"></script><script type="text/javascript" src="altair-resources/js/homepage.js"></script><script type="text/javascript" src="altair-resources/js/topics.js"></script><script type="text/javascript" src="altair-resources/js/offlinecheck.js"></script><script type="text/javascript" src="altair-resources/js/moreoptions.js"></script><script type="text/javascript" src="altair-resources/js/collapsibles.js"></script><script type="text/javascript" src="altair-resources/js/version-navigator.js"></script>
+
+<script type="text/javascript" src="./altair-resources/js/topics.js?39092024"></script>
+<script type="text/javascript" src="./altair-resources/js/googleAnalytics.js?39092024"></script>
+<script type="text/javascript" src="./altair-resources/js/offlinecheck.js?39092024"></script>
+<script type="text/javascript" src="./altair-resources/js/moreoptions.js?39092024"></script>
+<script type="text/javascript" src="./altair-resources/js/collapsibles.js?39092024"></script>
+<script type="text/javascript" src="./altair-resources/js/version-navigator.js?39092024"></script>
+<script type="text/javascript" src="./altair-resources/js/darkTheme.js?39092024"></script>
+
         
     </body>
 </html>

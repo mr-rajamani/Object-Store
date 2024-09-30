@@ -1,0 +1,10 @@
+<script src="${oxygen-webhelp-assets-dir}/lib/jquery/jquery-3.1.1.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="${oxygen-webhelp-output-dir}/altair-resources/js/topics.js?${timestamp([W01][M01][Y0001])}"></script>
+<script type="text/javascript" src="${oxygen-webhelp-output-dir}/altair-resources/js/googleAnalytics.js?${timestamp([W01][M01][Y0001])}"></script>
+<script type="text/javascript" src="${oxygen-webhelp-output-dir}/altair-resources/js/offlinecheck.js?${timestamp([W01][M01][Y0001])}"></script>
+<script type="text/javascript" src="${oxygen-webhelp-output-dir}/altair-resources/js/moreoptions.js?${timestamp([W01][M01][Y0001])}"></script>
+<script type="text/javascript" src="${oxygen-webhelp-output-dir}/altair-resources/js/collapsibles.js?${timestamp([W01][M01][Y0001])}"></script>
+<script type="text/javascript" src="${oxygen-webhelp-output-dir}/altair-resources/js/version-navigator.js?${timestamp([W01][M01][Y0001])}"></script>
+<script type="text/javascript" src="${oxygen-webhelp-output-dir}/altair-resources/js/darkTheme.js?${timestamp([W01][M01][Y0001])}"></script>

@@ -4,28 +4,11 @@ let helpName,
   majorVersion,
   localPath,
   onlinePath,
-  backdoorPath,
   activeLink,
   scrollPosition,
   accessType,
   linkClass,
   folderDepthString;
-
-function getModelFileBackdoorLink(onlinePath) {
-  let backdoorBasePath = `https://${majorVersion}.help.altair.com/Help,356A192B7913B04C54574D18C66680D5703E51A277,${version},`;
-  let backdoorEndPath = `,56AB4845.aspx`;
-  let onlineEndPath = onlinePath.match(/simulation\/.*/g)[0];
-  const lastFileSeparator = onlineEndPath.lastIndexOf("/");
-  onlineEndPath =
-    onlineEndPath.slice(0, lastFileSeparator) +
-    "," +
-    onlineEndPath.slice(lastFileSeparator + 1);
-  onlineEndPath = onlineEndPath.replaceAll("/", "__");
-  onlineEndPath = onlineEndPath.replace("__", ",");
-  backdoorPath = backdoorBasePath + onlineEndPath + backdoorEndPath;
-  sessionStorage.setItem("backdoorPath", backdoorPath);
-  return backdoorPath;
-}
 
 function setupOfflineCheck() {
   //Return immediately if not Altair Simulation help, or if on access options page.
@@ -51,11 +34,10 @@ function setupOfflineCheck() {
     console.log("Help is online.");
     if (modelLinks) {
       modelLinks.forEach((link) => {
-        link.href = getModelFileBackdoorLink(link.href);
-        // link.href = link.href
-        //   .replace("majorv", majorVersion)
-        //   .replace("minorv", version)
-        //   .replace("http:", "https:");
+        link.href = link.href
+          .replace("majorv", majorVersion)
+          .replace("minorv", version)
+          .replace("http:", "https:");
         //Force links to open in the same tab
         if (link.hasAttribute("target")) {
           link.removeAttribute("target");
@@ -159,8 +141,7 @@ function setupOfflineCheck() {
         closeModal();
       } else {
         try {
-          // Check if backdoor path is available. If not, load production path as fallback
-          document.location.href = backdoorPath ?? onlinePath;
+          document.location.href = onlinePath;
         } catch (error) {
           document.location.href = `https://${majorVersion}.help.altair.com/${version}/hwdesktop/altair_help/index.htm`;
         }
@@ -187,29 +168,6 @@ function setupOfflineCheck() {
     onlinePath =
       `https://${majorVersion}.help.altair.com/${version}/` + basePath;
     sessionStorage.setItem("onlinePath", onlinePath);
-  };
-
-  const getBackdoorLink = (onlinePath) => {
-    let backdoorBasePath = `https://${majorVersion}.help.altair.com/Help,356A192B7913B04C54574D18C66680D5703E51A277,${version},`;
-    let backdoorEndPath = `,56AB4845.aspx`;
-    let onlineEndPath = onlinePath.match(/hw[\S]*/g)[0];
-    if (accessType === "model" && onlinePath.match(/simulation.*/g)) {
-      onlineEndPath = onlinePath.match(/simulation.*/g)[0];
-    }
-    onlineEndPath = onlineEndPath.replaceAll("#", "|");
-    const lastFileSeparator = onlineEndPath.lastIndexOf("/");
-    onlineEndPath =
-      onlineEndPath.slice(0, lastFileSeparator) +
-      "," +
-      onlineEndPath.slice(lastFileSeparator + 1);
-    onlineEndPath = onlineEndPath.replaceAll("/", "__");
-    onlineEndPath = onlineEndPath.replace("__", ",");
-    if (onlineEndPath.includes("?")) {
-      questionCharIndex = onlineEndPath.lastIndexOf("?");
-      onlineEndPath = onlineEndPath.slice(0, questionCharIndex);
-    }
-    backdoorPath = backdoorBasePath + onlineEndPath + backdoorEndPath;
-    sessionStorage.setItem("backdoorPath", backdoorPath);
   };
 
   const cacheModelFileDirectory = () => {
@@ -244,7 +202,6 @@ function setupOfflineCheck() {
       function (event) {
         activeLink = prodImage.href;
         getOnlinePath(prodImage.href);
-        getBackdoorLink(onlinePath);
         checkOffline(event);
         cachePackage(onlinePath);
       },
@@ -255,7 +212,6 @@ function setupOfflineCheck() {
       function (event) {
         activeLink = event.target.parentNode.href;
         getOnlinePath(event.target.parentNode.href);
-        getBackdoorLink(onlinePath);
         checkOffline(event);
         cachePackage(onlinePath);
       },
@@ -279,6 +235,7 @@ function setupOfflineCheck() {
       hvp: "HyperView Player",
       hlife: "HyperLife",
       hlwc: "HyperLife Weld Certification",
+      mfs: "Manufacuturing Solutions", 
       basic: "BasicFEA",
       hc: "HyperCrash",
       hst: "HyperStudy",
@@ -315,7 +272,6 @@ function setupOfflineCheck() {
             onlinePath = currentLink
               .replace("majorv", majorVersion)
               .replace("minorv", version);
-            getBackdoorLink(onlinePath);
             if (!window.navigator.onLine) {
               checkOffline(event);
               let rawPath = window.location.href;
@@ -326,7 +282,6 @@ function setupOfflineCheck() {
               let onlineBasePath = `https://${majorVersion}.help.altair.com/${version}/`;
               onlinePath = onlineBasePath + partialRawPath;
               sessionStorage.setItem("onlinePath", onlinePath);
-              getBackdoorLink(onlinePath);
               let activeProductPaths = basePath[0].match(/\/[\S]*\//g);
               productPath = activeProductPaths[0].replaceAll("/", "");
               if (productPath.toLowerCase().includes("snrdunity")) {
@@ -343,14 +298,19 @@ function setupOfflineCheck() {
             // sessionStorage.setItem("accessType", "product");
             let rawPath = currentLink;
             // console.log(currentLink);
-            let basePath = rawPath.match(
-              /(hwsolvers|hwdesktop|hwcfdsolvers)\/[\S]*\/topics/g
-            );
+            let basepath
+            if (rawPath.includes("/mfs/")) {
+              basepath = rawPath.match(/hwdesktop\/mfs\//g);
+            }
+            else {
+              basePath = rawPath.match(
+                /(hwsolvers|hwdesktop|hwcfdsolvers)\/[\S]*\/topics/g
+              );
+          }
             let partialRawPath = rawPath.slice(rawPath.indexOf(basePath[0]));
             let onlineBasePath = `https://${majorVersion}.help.altair.com/${version}/`;
             onlinePath = onlineBasePath + partialRawPath;
             sessionStorage.setItem("onlinePath", onlinePath);
-            getBackdoorLink(onlinePath);
             // console.log(onlinePath);
             let activeProductPaths = basePath[0].match(/\/[\S]*\//g);
             productPath = activeProductPaths[0].replaceAll("/", "");
